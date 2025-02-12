@@ -1,6 +1,9 @@
 package entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,69 +28,73 @@ public class Aluno {
     @ManyToMany(mappedBy = "alunos")
     private List<Curso> cursos;
 
-	public Long getId() {
-		return id;
-	}
+    public Aluno() {
+        cursos = new ArrayList<>();
+        enderecos = new ArrayList<>();
+        telefones = new ArrayList<>();
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getNomeCompleto() {
-		return nomeCompleto;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
-	}
+    public String getNomeCompleto() {
+        return nomeCompleto;
+    }
 
-	public String getMatricula() {
-		return matricula;
-	}
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
+    public String getMatricula() {
+        return matricula;
+    }
 
-	public Date getNascimento() {
-		return nascimento;
-	}
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
 
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
-	}
+    public Date getNascimento() {
+        return nascimento;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public List<Telefone> getTelefones() {
-		return telefones;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setTelefones(List<Telefone> telefones) {
-		this.telefones = telefones;
-	}
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
 
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
+    }
 
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
-	}
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
 
-	public List<Curso> getCursos() {
-		return cursos;
-	}
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
 
-	public void setCursos(List<Curso> cursos) {
-		this.cursos = cursos;
-	}
+    public List<Curso> getCursos() {
+        return cursos;
+    }
 
-    
+    public void setCursos(List<Curso> cursos) {
+        this.cursos = cursos;
+    }
 }
