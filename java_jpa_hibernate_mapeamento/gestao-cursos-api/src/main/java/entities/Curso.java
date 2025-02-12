@@ -26,6 +26,10 @@ public class Curso {
             inverseJoinColumns = @JoinColumn(name = "aluno_id"))
     private List<Aluno> alunos;
 
+	public Curso() {
+        	alunos = new ArrayList<>();
+    	}
+
 	public Long getId() {
 		return id;
 	}
